@@ -1,0 +1,4 @@
+django
+rest_framework
+python-decouple
+pillow==11.3.0
