@@ -1,2 +1,5 @@
 frontend/dev-portfolio/node_modules
 backend/devPortfolioBackend/.env
+backend/devPortfolioBackend/core/migrations
+backend/devPortfolioBackend/core/__pycache__
+backend/venv/
