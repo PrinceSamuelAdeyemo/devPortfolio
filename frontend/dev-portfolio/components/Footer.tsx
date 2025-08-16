@@ -14,13 +14,13 @@ export default function Footer() {
                 <p>C 2024</p>
                 <div className="flex gap-4">
                     <Link href={"#"}>
-                        <Image src={""} alt="github-link" width={10} height={10} />
+                        <Image src={null} alt="github-link" width={10} height={10} />
                     </Link>
                     <Link href={"#"}>
-                        <Image src={""} alt="linkedin-link" width={10} height={10} />
+                        <Image src={null} alt="linkedin-link" width={10} height={10} />
                     </Link>
                     <Link href={"#"}>
-                        <Image src={""} alt="x-link" width={10} height={10} />
+                        <Image src={null} alt="x-link" width={10} height={10} />
                     </Link>
                 </div>
             </div>
