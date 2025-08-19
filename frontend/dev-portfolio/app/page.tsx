@@ -32,10 +32,10 @@ const getExpertise = async () => {
     }
   }
 
-export default async function Home(props: myExpertiseType) {
+export default async function Home() {
 
   const myProgrammingLanguages = await getProgrammingLanguages();
-  const myExpertises = await getExpertise()
+  const myExpertises:myExpertiseType = await getExpertise()
 
   return (
     <div>
