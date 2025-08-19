@@ -105,7 +105,7 @@ export default async function Home(props: myExpertiseType) {
         <div className="h-[30vh] w-full px-10 xl:px-20">
           <div className="flex flex-col gap-4 items-center justify-center rounded-xl outline-1 outline-gray-200 shadow w-full h-full">
             <p className="font-semibold text-3xl space-x-4">Ready to Transform Your Ideas into Reality?</p>
-            <p className="text-center w-[30%]">Whether you have a complex challenge or a groundbreaking concept, let\'s connect and build something extraordinary together. Your next big project starts here.</p>
+            <p className="text-center w-[30%]">Whether you have a complex challenge or a groundbreaking concept, let&apos;s connect and build something extraordinary together. Your next big project starts here.</p>
             <div className="flex gap-4">
               <button className="bg-personalpurple text-white px-4 py-2 rounded">Schedule a consultation</button>
               <button className="outline-1 outline-gray-200 px-4 py-2 rounded">View All Projects</button>
