@@ -20,7 +20,9 @@ export default function FeaturedProject() {
                 <p className="bg-gray-100 text-xs font-semibold rounded w-fit px-2">React</p>
                 <p className="bg-gray-100 text-xs font-semibold rounded w-fit px-2">React</p>
             </div>
-            <Link className="text-personalpurple text-sm" href={"#"}>View Project</Link>
+            <Link className="flex items-center gap-1 text-personalpurple text-sm" href={"#"}>View Project
+            <span><i><Image className="text-white text-bold" src={"/icons/lucide-ArrowRight-Outlined (2).svg"} alt="" width={10} height={10} /></i></span>
+            </Link>
             </div>
         </div>
     )

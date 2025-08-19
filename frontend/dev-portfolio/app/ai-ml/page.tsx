@@ -13,7 +13,7 @@ export default function AI_ML(){
         <div>
             <Navbar />
 
-            <div className="flex flex-col gap-10 lg:gap-24 pb-32">
+            <div className="flex flex-col gap-10 lg:gap-24 pb-32 pt-16">
                 {/* HERO SECTION */}
                 <div className="flex gap-2 pt-20 pb-4">
                     <div className="h-[50vh] flex flex-col py-20 gap-4 px-12 lg:w-1/2">

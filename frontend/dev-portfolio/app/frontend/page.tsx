@@ -7,13 +7,14 @@ import FeaturedProject from "@/components/FeaturedProject";
 import Footer from "@/components/Footer";
 
 
+
 export default function Frontend(){
 
     return(
         <div>
             <Navbar />
 
-            <div className="flex flex-col gap-10 lg:gap-24 pb-32">
+            <div className="flex flex-col gap-10 lg:gap-24 pb-32 pt-16">
                 {/* HERO SECTION */}
                 <div className="pt-20">
                     <div className="flex flex-col items-center gap-4">

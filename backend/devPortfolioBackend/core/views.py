@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import (Expertise, Tool, ProgrammingLanguage, Project, Article)
-from .serializers import (ExpertiseSerializer, ToolSerializer, ProgrammingLanguageSerializer,  ProjectSerializer, ArticleSerializer)
+from .models import (Expertise, Tool, ProgrammingLanguage, ExpertiseSkill, Project, Article)
+from .serializers import (ExpertiseSerializer, ToolSerializer, ProgrammingLanguageSerializer, ExpertiseSkillSerializer,  ProjectSerializer, ArticleSerializer)
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -25,6 +25,14 @@ class ProgrammingLanguageViews(APIView):
     def get(self, request):
         programming_language = ProgrammingLanguage.objects.all()
         serializer = ProgrammingLanguageSerializer(programming_language, many=True)
+
+        return Response(serializer.data)
+    
+
+class ExpertiseSkillViews(APIView):
+    def get(self, request, type):
+        expertise_skill = ExpertiseSkill.objects.filter(expertise__name__icontains=type)
+        serializer = ExpertiseSkillSerializer(expertise_skill, many=True)
 
         return Response(serializer.data)
     

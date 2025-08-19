@@ -5,20 +5,35 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import FeaturedProject from "@/components/FeaturedProject";
 import Footer from "@/components/Footer";
+import Skills from "@/components/Skills";
+
+import api from "@/utils/api";
+import { myExpertiseSkillsType } from "@/types/myExpertiseType";
 
 
-export default function Backend(){
+const getBackendSkills = async () =>{
+    try{
+      const response = await api.get('/api/expertise-skills/backend')
+      return response.data
+    }
+    catch (error) {
+      console.error(error)
+    }
+}
+
+export default async function Backend(){
+    const myBackendSkills = await getBackendSkills();
 
     return(
         <div>
             <Navbar />
 
-            <div className="flex flex-col gap-10 lg:gap-24 pb-32">
+            <div className="flex flex-col gap-10 lg:gap-24 pb-32 pt-16">
                 {/* HERO SECTION */}
-                <div className="pt-20">
+                <div className="py-28 bg-gradient-to-r from-white via-personalpurple via-50% to-white to-95%">
                     <div className="flex flex-col items-center gap-4">
                         <p className="text-5xl font-bold">Backend Development</p>
-                        <p className="text-base text-gray-400 text-center w-[30%]">Crafting beautiful, responsive, and high-performance user interfaces that captivate and convert. Explore a selection of projects showcasing expertise in modern web technologies.</p>
+                        <p className="text-base text-gray-400 text-center w-[30%]">Crafting robust, scalable, and secure server-side solutions that power modern applications. Explore my deep understanding of backend systems and architecture.</p>
                     </div>
                 </div>
 
@@ -26,27 +41,24 @@ export default function Backend(){
                 <div className="flex flex-col gap-8 lg:gap-20 items-center">
                     {/* Skills */}
                     <div className="flex flex-col gap-6 w-4/5">
-                        <p className="font-semibold text-2xl text-center ">Core Frontend Skills & Technologies</p>
-                        <div className="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">HTML</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">CSS</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">Javascript</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">Typescript</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">React.js</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">Next.js</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">React</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">React</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">React</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">React</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">React</p>
-                            <p className="bg-gray-100 text-sm font-semibold rounded w-fit px-2">React</p>
+                        <p className="font-semibold text-2xl text-center ">Core Backend Skills</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-2 xl:gap-4">
+                            {
+                                myBackendSkills.map((skill: myExpertiseSkillsType) => (
+                                    <Skills key={skill.id} {...skill} />
+                                ))
+                                
+                            }
+                            
                         </div>
+                        
                     </div>
+
 
                     {/* featured frontend projects */}
                     <div className="flex flex-col gap-6 w-4/5">
-                        <p className="font-semibold text-2xl text-center ">Core Frontend Skills & Technologies</p>
-                        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <p className="font-semibold text-2xl text-center ">Featured Backend Projects</p>
+                        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <FeaturedProject />
                             <FeaturedProject />
                             <FeaturedProject />
@@ -60,7 +72,7 @@ export default function Backend(){
 
                     {/* Articles/Writeups */}
                     <div className="flex flex-col gap-6 w-4/5">
-                        <p className="font-semibold text-2xl text-center ">Frontend Trends & Insights</p>
+                        <p className="font-semibold text-2xl text-center ">Backend Architecture Spotlights</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <FeaturedProject />
                             <FeaturedProject />

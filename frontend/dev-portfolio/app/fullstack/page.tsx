@@ -13,7 +13,7 @@ export default function Fullstack(){
         <div>
             <Navbar />
 
-            <div className="flex flex-col gap-10 lg:gap-24 pb-32">
+            <div className="flex flex-col gap-10 lg:gap-24 pb-32 pt-16">
                 {/* HERO SECTION */}
                 <div className="flex justify-center py-10">
                     <div className="flex flex-col w-[95%] gap-12">

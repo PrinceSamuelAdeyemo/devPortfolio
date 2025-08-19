@@ -7,6 +7,9 @@ import uuid
 class Expertise(models.Model):
     id = models.UUIDField(default = uuid.uuid4, primary_key=True)
     name = models.CharField(max_length=128)
+    description = models.TextField(blank=True, null=True)
+    icon = models.FileField(upload_to="icons/expertise/", blank=True, null=True)
+    image = models.ImageField(blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -17,7 +20,7 @@ class Tool(models.Model):
     name = models.CharField(max_length=128)
 
     def __str__(self):
-        self.name
+        return self.name
 
 
 class ProgrammingLanguage(models.Model):
@@ -25,7 +28,18 @@ class ProgrammingLanguage(models.Model):
     name = models.CharField(max_length=128)
 
     def __str__(self):
-        self.name
+        return self.name
+
+
+class ExpertiseSkill(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True)
+    name = models.CharField(max_length=128)
+    description = models.CharField(max_length=256)
+    icon = models.FileField(upload_to="icons/expertise-skills/")
+    expertise = models.ManyToManyField(Expertise, related_name="expertise_skills")
+
+    def __str__(self):
+        return self.name
 
 class Project(models.Model):
     id = models.UUIDField(default = uuid.uuid4, primary_key=True)
@@ -52,8 +66,8 @@ class Article(models.Model):
     slug = models.SlugField(max_length=256, unique=True)
     expertise = models.ManyToManyField(Expertise, related_name='articles')
 
-    body = models.TextField()
-    link = models.URLField()
+    body = models.TextField(blank=True, null=True)
+    link = models.URLField(blank=True, null=True)
     
     def __str__(self):
-        return self.name
+        return self.title
