@@ -7,6 +7,8 @@ import FeaturedProject from "@/components/FeaturedProject";
 import Footer from "@/components/Footer";
 import Skills from "@/components/Skills";
 
+import { myExpertiseSkillsType } from "@/types/myExpertiseType";
+
 export default function AI_ML(){
 
     return(
@@ -57,12 +59,7 @@ export default function AI_ML(){
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl text-center ">Our AI/ML Impact & Metrics</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-2 xl:gap-4">
-                            <Skills />
-                            <Skills />
-                            <Skills />
-                            <Skills />
-                            <Skills />
-                            <Skills />
+                            <p>AI Skills here</p>
                         </div>
                         
                     </div>

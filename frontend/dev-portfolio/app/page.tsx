@@ -35,7 +35,7 @@ const getExpertise = async () => {
 export default async function Home() {
 
   const myProgrammingLanguages = await getProgrammingLanguages();
-  const myExpertises:myExpertiseType = await getExpertise()
+  const myExpertises:myExpertiseType[] = await getExpertise()
 
   return (
     <div>
@@ -74,7 +74,7 @@ export default async function Home() {
 
           <div className="flex flex-col px-10 xl:px-20 lg:gap-10 lg:flex-row lg:justify-between">
             {
-              myExpertises.map((myExpertise: myExpertiseType, index:string) => (
+              myExpertises.map((myExpertise: myExpertiseType, index:number) => (
                 <Expertise key={index} id={myExpertise.id} name ={myExpertise.name} description={myExpertise.description} icon={myExpertise.icon} image={myExpertise.image} />
               ))
             }
