@@ -3,4 +3,4 @@ djangorestframework==3.16.1
 python-decouple==3.8
 pillow==11.3.0
 django-cors-headers==4.7.0
-mysqlclient==2.2.0
+mysqlclient==2.2.7
