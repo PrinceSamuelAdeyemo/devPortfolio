@@ -64,8 +64,6 @@ export default function AI_ML(){
                         
                     </div>
 
-
-
                     {/* Articles/Writeups */}
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl text-center ">My contributions & Resources</p>
