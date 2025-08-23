@@ -57,6 +57,11 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS = [
+    "honeywell.pythonanywhere.com",
+    "127.0.0.1",
+    "localhost",
+]
 
 ROOT_URLCONF = 'devPortfolioBackend.urls'
 
