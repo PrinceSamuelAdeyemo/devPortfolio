@@ -13,6 +13,8 @@ import Footer from "@/components/Footer";
 
 
 const getProgrammingLanguages = async () => {
+    console.log(`Calling API ${api}`)
+    console.log(`Calling API ${api}/api/expertises`)
     try{
       const response = await api.get('/api/programminglanguage')
       return response.data
