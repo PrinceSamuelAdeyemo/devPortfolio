@@ -11,7 +11,7 @@ import api from "@/utils/api";
 import { myExpertiseSkillsType, myProjectsType, myArticlesType } from "@/types/myExpertiseType";
 
 
-const getProjects = async () => {
+/* const getProjects = async () => {
     try{
       const response = await api.get('/api/projects/ai-ml')
       console.log(response.data);
@@ -20,9 +20,9 @@ const getProjects = async () => {
     catch (error) {
       console.error(error)
     }
-  }
+  } */
 
-const getArticles = async () => {
+/* const getArticles = async () => {
     try{
       const response = await api.get('/api/articles/ai-ml')
       console.log(response.data);
@@ -31,11 +31,11 @@ const getArticles = async () => {
     catch (error) {
       console.error(error)
     }
-}
+} */
 
 export default async function AI_ML(){
-    const myProjects:myProjectsType[] = await getProjects();
-    const myArticles:myArticlesType[] = await getArticles();
+    /* const myProjects:myProjectsType[] = await getProjects();
+    const myArticles:myArticlesType[] = await getArticles(); */
 
     return(
         <div>
@@ -85,11 +85,11 @@ export default async function AI_ML(){
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl text-center ">Our AI/ML Impact & Metrics</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-2 xl:gap-4">
-                            {
+                            {/* {
                                 myProjects.map((featured_project, index) => (
                                     <FeaturedProject key={index} {...featured_project} />
                                 ))
-                            }
+                            } */}
                         </div>
                         
                     </div>
