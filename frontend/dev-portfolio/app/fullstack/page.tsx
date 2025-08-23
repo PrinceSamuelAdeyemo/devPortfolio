@@ -34,9 +34,9 @@ export default function Fullstack(){
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl">Featured Fullstack Projects</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {/* <FeaturedProject />
                             <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
+                            <FeaturedProject /> */}
                         </div>
                     </div>
 
@@ -44,6 +44,7 @@ export default function Fullstack(){
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl">All Projects</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {/* <FeaturedProject />
                             <FeaturedProject />
                             <FeaturedProject />
                             <FeaturedProject />
@@ -51,8 +52,7 @@ export default function Fullstack(){
                             <FeaturedProject />
                             <FeaturedProject />
                             <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
+                            <FeaturedProject /> */}
                         </div>
                         <div>
                             
@@ -63,9 +63,9 @@ export default function Fullstack(){
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl text-center ">All Articles</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {/* <FeaturedProject />
                             <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
+                            <FeaturedProject /> */}
                         </div>
                     </div>
 
