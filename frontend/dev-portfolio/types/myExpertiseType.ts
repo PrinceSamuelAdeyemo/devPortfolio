@@ -34,6 +34,14 @@ export interface myProjectsType{
     github_url: string;
     live_url: string | null;
     expertise: myExpertiseType[];
-    programming_language: myProgrammingLanguagesType[];
+    programming_language: myProgrammingLanguagesType[] | null;
     tools: myToolsType[];
+}
+
+export interface myArticlesType{
+    id: string;
+    title: string;
+    expertise: myExpertiseType;
+    body: string;
+    link: string;
 }
