@@ -17,6 +17,7 @@ export interface myExpertiseSkillsType{
 export interface myToolsType{
     id: string;
     name: string;
+    expertise: myExpertiseType | null;
 }
 
 export interface myProgrammingLanguagesType{
