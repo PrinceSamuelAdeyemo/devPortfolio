@@ -13,3 +13,26 @@ export interface myExpertiseSkillsType{
     icon: string | null;
     expertise: myExpertiseType;
 }
+
+export interface myToolsType{
+    id: string;
+    name: string;
+}
+
+export interface myProgrammingLanguagesType{
+    id: string;
+    name: string;
+}
+
+export interface myProjectsType{
+    id: string;
+    name: string;
+    description: string;
+    image: string | null;
+    video: string | null;
+    github_url: string;
+    live_url: string | null;
+    expertise: myExpertiseType[];
+    programming_language: myProgrammingLanguagesType[];
+    tools: myToolsType[];
+}
