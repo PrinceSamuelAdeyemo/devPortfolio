@@ -46,16 +46,22 @@ class ExpertiseSkillViews(APIView):
     
 
 class ProjectViews(APIView):
-    def get(self, request):
-        projects = Project.objects.all()
+    def get(self, request, expertise=None):
+        if expertise == None:
+            projects = Project.objects.all()
+        else:
+            projects = Project.objects.filter(expertise__name__icontains=expertise)
         serializer = ProjectSerializer(projects, many=True)
 
         return Response(serializer.data)
 
 
 class ArticleViews(APIView):
-    def get(self, request):
-        article = Article.objects.all()
+    def get(self, request, expertise=None):
+        if expertise == None:
+            article = Article.objects.all()
+        else:
+            article = Article.objects.filter(expertise__name__icontains=expertise)
         serializer = ArticleSerializer(article, many=True)
 
         return Response(serializer.data)
