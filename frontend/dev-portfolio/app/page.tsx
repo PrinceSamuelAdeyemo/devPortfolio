@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import api from "@/utils/api";
-import { myExpertiseType } from "@/types/myExpertiseType";
+import { myExpertiseType, myProgrammingLanguagesType, myProjectsType } from "@/types/myExpertiseType";
 
 // Components
 import Navbar from "@/components/Navbar";
@@ -13,8 +13,7 @@ import Footer from "@/components/Footer";
 
 
 const getProgrammingLanguages = async () => {
-    console.log(`Calling API ${api}`)
-    console.log(`Calling API ${api}/api/expertises`)
+  
     try{
       const response = await api.get('/api/programminglanguage')
       return response.data
@@ -34,10 +33,22 @@ const getExpertise = async () => {
     }
   }
 
+const getProjects = async () => {
+    try{
+      const response = await api.get('/api/projects')
+      console.log(response.data);
+      return response.data
+    }
+    catch (error) {
+      console.error(error)
+    }
+  }
+
 export default async function Home() {
 
-  const myProgrammingLanguages = await getProgrammingLanguages();
-  const myExpertises:myExpertiseType[] = await getExpertise()
+  const myProgrammingLanguages:myProgrammingLanguagesType[] = await getProgrammingLanguages();
+  const myExpertises:myExpertiseType[] = await getExpertise();
+  const myProjects:myProjectsType[] = await getProjects();
 
   return (
     <div>
@@ -94,12 +105,12 @@ export default async function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
-            <FeaturedProject />
-            <FeaturedProject />
-            <FeaturedProject />
-            <FeaturedProject />
-            <FeaturedProject />
-            <FeaturedProject />
+            {
+              myProjects.map((featured_project, index) => (
+                <FeaturedProject key={index} {...featured_project} />
+              ))
+            }
+            
           </div>
         </div>
 
