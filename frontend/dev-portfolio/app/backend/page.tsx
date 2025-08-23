@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Skills from "@/components/Skills";
 
 import api from "@/utils/api";
-import { myExpertiseSkillsType } from "@/types/myExpertiseType";
+import { myExpertiseSkillsType, myProjectsType, myArticlesType } from "@/types/myExpertiseType";
 
 
 const getBackendSkills = async () =>{
@@ -21,8 +21,32 @@ const getBackendSkills = async () =>{
     }
 }
 
+const getProjects = async () => {
+    try{
+      const response = await api.get('/api/projects/backend')
+      console.log(response.data);
+      return response.data
+    }
+    catch (error) {
+      console.error(error)
+    }
+  }
+
+const getArticles = async () => {
+    try{
+      const response = await api.get('/api/articles/backend')
+      console.log(response.data);
+      return response.data
+    }
+    catch (error) {
+      console.error(error)
+    }
+}
+
 export default async function Backend(){
     const myBackendSkills = await getBackendSkills();
+    const myProjects:myProjectsType[] = await getProjects();
+    const myArticles:myArticlesType[] = await getArticles();
 
     return(
         <div>
@@ -47,26 +71,19 @@ export default async function Backend(){
                                 myBackendSkills.map((skill: myExpertiseSkillsType) => (
                                     <Skills key={skill.id} {...skill} />
                                 ))
-                                
                             }
-                            
                         </div>
-                        
                     </div>
-
 
                     {/* featured frontend projects */}
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl text-center ">Featured Backend Projects</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
+                            {
+                                myProjects.map((featured_project, index) => (
+                                    <FeaturedProject key={index} {...featured_project} />
+                                ))
+                            }
                         </div>
                     </div>
 
@@ -74,17 +91,12 @@ export default async function Backend(){
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl text-center ">Backend Architecture Spotlights</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {/* <FeaturedProject />
                             <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
+                            <FeaturedProject /> */}
                         </div>
                     </div>
-
-
                 </div>
-            
-
-
             </div>
 
             <Footer />
