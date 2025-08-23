@@ -1,9 +1,11 @@
 import axios from 'axios'
 
-export const baseUrl = 'http://127.0.0.1:8000'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL
+
+export const baseUrl = API_BASE_URL;
 
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000',
+    baseURL: API_BASE_URL,
     headers: {
         'Content-Type': 'application/json',
     },
