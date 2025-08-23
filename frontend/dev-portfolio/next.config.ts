@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
       {
         protocol: 'http',
         hostname: `${API_BASE_HOST}`,
-        port: `${API_BASE_PORT}`,
+        port: API_BASE_PORT || undefined,
         pathname: '/media/**'
       },
     ]
