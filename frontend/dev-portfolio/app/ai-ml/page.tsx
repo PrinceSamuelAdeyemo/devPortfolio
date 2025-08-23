@@ -7,9 +7,35 @@ import FeaturedProject from "@/components/FeaturedProject";
 import Footer from "@/components/Footer";
 import Skills from "@/components/Skills";
 
-import { myExpertiseSkillsType } from "@/types/myExpertiseType";
+import api from "@/utils/api";
+import { myExpertiseSkillsType, myProjectsType, myArticlesType } from "@/types/myExpertiseType";
 
-export default function AI_ML(){
+
+const getProjects = async () => {
+    try{
+      const response = await api.get('/api/projects/ai-ml')
+      console.log(response.data);
+      return response.data
+    }
+    catch (error) {
+      console.error(error)
+    }
+  }
+
+const getArticles = async () => {
+    try{
+      const response = await api.get('/api/articles/ai-ml')
+      console.log(response.data);
+      return response.data
+    }
+    catch (error) {
+      console.error(error)
+    }
+}
+
+export default async function AI_ML(){
+    const myProjects:myProjectsType[] = await getProjects();
+    const myArticles:myArticlesType[] = await getArticles();
 
     return(
         <div>
@@ -42,16 +68,16 @@ export default function AI_ML(){
                 <div className="flex flex-col gap-8 lg:gap-20 items-center">
                     {/* featured frontend projects */}
                     <div className="flex flex-col gap-6 w-4/5">
-                        <p className="font-semibold text-2xl text-center ">Featured Backend Projects</p>
+                        <p className="font-semibold text-2xl text-center ">Featured AI/ML Projects</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {/* <FeaturedProject />
                             <FeaturedProject />
                             <FeaturedProject />
                             <FeaturedProject />
                             <FeaturedProject />
                             <FeaturedProject />
                             <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
+                            <FeaturedProject /> */}
                         </div>
                     </div>
 
@@ -59,7 +85,11 @@ export default function AI_ML(){
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl text-center ">Our AI/ML Impact & Metrics</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-2 xl:gap-4">
-                            <p>AI Skills here</p>
+                            {
+                                myProjects.map((featured_project, index) => (
+                                    <FeaturedProject key={index} {...featured_project} />
+                                ))
+                            }
                         </div>
                         
                     </div>
@@ -68,9 +98,9 @@ export default function AI_ML(){
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl text-center ">My contributions & Resources</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {/* <FeaturedProject />
                             <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
+                            <FeaturedProject /> */}
                         </div>
                     </div>
 
