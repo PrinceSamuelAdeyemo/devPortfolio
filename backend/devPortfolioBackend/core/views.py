@@ -15,7 +15,15 @@ class ExpertiseViews(APIView):
 
 class ToolViews(APIView):
     def get(self, request):
-        tools = tools.objects.all()
+        tools = Tool.objects.all()
+        serializer = ToolSerializer(tools, many=True)
+
+        return Response(serializer.data)
+
+
+class ExpertiseToolViews(APIView):
+    def get(self, request, expertise):
+        tools = Tool.objects.filter(expertise__name__icontains=expertise)
         serializer = ToolSerializer(tools, many=True)
 
         return Response(serializer.data)

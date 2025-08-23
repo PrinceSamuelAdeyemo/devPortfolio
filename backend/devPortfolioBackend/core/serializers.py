@@ -11,6 +11,7 @@ class ToolSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tool
         fields = "__all__"
+        depth = 1
     
 
 class ProgrammingLanguageSerializer(serializers.ModelSerializer):

@@ -18,6 +18,7 @@ class Expertise(models.Model):
 class Tool(models.Model):
     id = models.UUIDField(default = uuid.uuid4, primary_key=True)
     name = models.CharField(max_length=128)
+    expertise = models.ManyToManyField(Expertise, related_name="tools")
 
     def __str__(self):
         return self.name
