@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Skills from "@/components/Skills";
 
 import api from "@/utils/api";
-import { myExpertiseSkillsType } from "@/types/myExpertiseType";
+import { myExpertiseSkillsType, myProjectsType, myArticlesType } from "@/types/myExpertiseType";
 
 
 const getBlockchainSkills = async () =>{
@@ -21,9 +21,33 @@ const getBlockchainSkills = async () =>{
     }
 }
 
+const getProjects = async () => {
+    try{
+      const response = await api.get('/api/projects/blockchain')
+      console.log(response.data);
+      return response.data
+    }
+    catch (error) {
+      console.error(error)
+    }
+  }
+
+const getArticles = async () => {
+    try{
+      const response = await api.get('/api/articles/blockchain')
+      console.log(response.data);
+      return response.data
+    }
+    catch (error) {
+      console.error(error)
+    }
+}
+
 
 export default async function Blockchain(){
     const myBlockchainSkills = await getBlockchainSkills();
+    const myProjects:myProjectsType[] = await getProjects();
+    const myArticles:myArticlesType[] = await getArticles();
 
     return(
         <div>
@@ -49,27 +73,20 @@ export default async function Blockchain(){
                             {
                                 myBlockchainSkills.map((skill: myExpertiseSkillsType) => (
                                     <Skills key={skill.id} {...skill} />
-                                ))
-                                
+                                ))   
                             }
-                            
                         </div>
-                        
                     </div>
-
 
                     {/* featured frontend projects */}
                     <div className="flex flex-col gap-6 w-4/5">
-                        <p className="font-semibold text-2xl text-center ">Featured Backend Projects</p>
+                        <p className="font-semibold text-2xl text-center ">Featured Blockchain Projects</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
+                            {
+                                myProjects.map((featured_project, index) => (
+                                    <FeaturedProject key={index} {...featured_project} />
+                                ))
+                            }
                         </div>
                     </div>
 
@@ -77,9 +94,9 @@ export default async function Blockchain(){
                     <div className="flex flex-col gap-6 w-4/5">
                         <p className="font-semibold text-2xl text-center ">My contributions & Resources</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {/* <FeaturedProject />
                             <FeaturedProject />
-                            <FeaturedProject />
-                            <FeaturedProject />
+                            <FeaturedProject /> */}
                         </div>
                     </div>
 
