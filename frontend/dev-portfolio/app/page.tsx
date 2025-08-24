@@ -74,11 +74,11 @@ export default async function Home() {
             </div>
           </div>
           
-          <div className="flex justify-end pr-32 items-center lg:w-1/2">
+          {/* <div className="flex justify-end pr-32 items-center lg:w-1/2">
             <div className="relative w-[60%] h-[80%]">
               <Image className="rounded-xl" src="/personal/photo_2025-08-13_19-33-12.jpg" alt="My picture" fill />
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* MY EXPERTISE */}
