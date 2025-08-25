@@ -6,3 +6,5 @@ backend/devPortfolioBackend/*/migrations
 backend/venv/
 backend/devPortfolioBackend/*/__pycache__/
 backend/devPortfolioBackend/media/
+core/__pycache__/
+devPortfolioBackend/__pycache__/
