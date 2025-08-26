@@ -6,6 +6,7 @@ urlpatterns = [
     path('tools/', ToolViews.as_view(), name='tools'),
     path('tools/<str:expertise>/', ExpertiseToolViews.as_view(), name='tools-expertise'),
     path('programminglanguage/', ProgrammingLanguageViews.as_view(), name='programminglanguage'),
+    path('programminglanguage/<str:expertise>', ProgrammingLanguageViews.as_view(), name='expertise-programminglanguage'),
     path('expertise-skills/<str:type>/', ExpertiseSkillViews.as_view(), name='expertise-skill'),
     path('projects/', ProjectViews.as_view(), name='projectviews'),
     path('projects/<str:expertise>/', ProjectViews.as_view(), name='expertise-projectviews'),

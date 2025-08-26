@@ -30,8 +30,11 @@ class ExpertiseToolViews(APIView):
     
 
 class ProgrammingLanguageViews(APIView):
-    def get(self, request):
-        programming_language = ProgrammingLanguage.objects.all()
+    def get(self, request, expertise=None):
+        if expertise == None:
+            programming_language = ProgrammingLanguage.objects.all()
+        else:
+            programming_language = ProgrammingLanguage.objects.filter(expertise__name__icontains=expertise)
         serializer = ProgrammingLanguageSerializer(programming_language, many=True)
 
         return Response(serializer.data)

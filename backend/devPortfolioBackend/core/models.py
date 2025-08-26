@@ -27,6 +27,7 @@ class Tool(models.Model):
 class ProgrammingLanguage(models.Model):
     id = models.UUIDField(default = uuid.uuid4, primary_key=True)
     name = models.CharField(max_length=128)
+    expertise = models.ManyToManyField(Expertise, related_name="programming_languages")
 
     def __str__(self):
         return self.name

@@ -18,6 +18,7 @@ class ProgrammingLanguageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProgrammingLanguage
         fields = "__all__"
+        depth = 1
 
 
 class ExpertiseSkillSerializer(serializers.ModelSerializer):
