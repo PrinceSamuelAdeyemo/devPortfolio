@@ -8,3 +8,6 @@ backend/devPortfolioBackend/*/__pycache__/
 backend/devPortfolioBackend/media/
 core/__pycache__/
 devPortfolioBackend/__pycache__/
+*.pyc
+_pycache_/
+../staticfiles/
