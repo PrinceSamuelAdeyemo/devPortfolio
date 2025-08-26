@@ -9,15 +9,15 @@ export default function FeaturedProject(featured_project: myProjectsType) {
     
     return (
         <div className="shadow">
-            <div className="relative w-full h-[35vh]">
+            <div className="relative w-full h-[20vh] lg:h-[35vh]">
                 <Image className="" src={featured_project.image ? `${BASE_URL}${featured_project.image}`: ''} alt="Frontend Card Picture" fill />
                 <div className="absolute bottom-0 left-0 w-full h-2/5 bg-gradient-to-b from-transparent to-white">
 
                 </div>
             </div>
             <div className="flex flex-col gap-4 py-4 px-6">
-                <p className="font-bold">{featured_project.name}</p>
-                <p className="text-gray-500 text-base">{featured_project.description}</p>
+                <p className="font-semibold lg:font-bold">{featured_project.name}</p>
+                <p className="text-gray-500 text-[90%] lg:text-base">{featured_project.description}</p>
                 <div className="flex gap-4">
                     {
                         tools.map((tool, index) => (
