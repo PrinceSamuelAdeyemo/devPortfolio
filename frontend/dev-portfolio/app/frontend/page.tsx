@@ -67,7 +67,7 @@ export default async function Frontend(){
                 <div className="lg:pt-20">
                     <div className="flex flex-col items-center gap-2 lg:gap-4">
                         <p className="text-2xl lg:text-5xl font-bold">Frontend Development</p>
-                        <p className="text-base text-gray-400 text-center w-[30%]">{myFrontendTools[0].expertise?.description}</p>
+                        <p className="text-base text-gray-400 text-center w-[90%] md:w-[50%] lg:w-[30%]">{myFrontendTools[0].expertise?.description}</p>
                     </div>
                 </div>
 

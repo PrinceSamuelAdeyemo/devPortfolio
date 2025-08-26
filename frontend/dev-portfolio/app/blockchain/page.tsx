@@ -53,12 +53,12 @@ export default async function Blockchain(){
         <div>
             <Navbar />
 
-            <div className="flex flex-col gap-10 lg:gap-24 pb-32 pt-16">
+            <div className="flex flex-col gap-12 pb-2 lg:gap-24 lg:pb-32 lg:pt-16">
                 {/* HERO SECTION */}
                 <div className="flex justify-center py-8">
                     <div className="flex flex-col items-center gap-4 py-10 bg-personallightblue rounded-xl w-[95%]">
-                        <p className="text-4xl text-center font-bold w-[50%]">Blockchain & Smart Contracts Development</p>
-                        <p className="text-base text-gray-400 text-center w-[30%]">Leveraging cutting-edge decentralized technologies to build secure, transparent, and innovative blockchain solutions, from smart contracts to full-scale dApps.</p>
+                        <p className="text-2xl lg:text-4xl text-center font-bold lg:w-[50%]">Blockchain & Smart Contracts Development</p>
+                        <p className="text-base text-gray-400 text-center w-[90%] md:w-[50%] lg:w-[30%]">Leveraging cutting-edge decentralized technologies to build secure, transparent, and innovative blockchain solutions, from smart contracts to full-scale dApps.</p>
                         <Image src={"/blockchain page image.jpg"} alt="Blockchain intro image" width={700} height={300} />
                         <button className="text-white text-sm font-semibold px-3 py-1 bg-personalpurple rounded">Explore My Blockchain Projects</button>
                     </div>
@@ -68,8 +68,8 @@ export default async function Blockchain(){
                 <div className="flex flex-col gap-8 lg:gap-20 items-center">
                     {/* Skills */}
                     <div className="flex flex-col gap-6 w-4/5">
-                        <p className="font-semibold text-2xl text-center ">My Core Blockchain Competencies</p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-2 xl:gap-4">
+                        <p className="font-semibold text-xl lg:text-2xl text-center ">My Core Blockchain Competencies</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-2 xl:gap-4">
                             {
                                 myBlockchainSkills.map((skill: myExpertiseSkillsType) => (
                                     <Skills key={skill.id} {...skill} />
@@ -80,7 +80,7 @@ export default async function Blockchain(){
 
                     {/* featured frontend projects */}
                     <div className="flex flex-col gap-6 w-4/5">
-                        <p className="font-semibold text-2xl text-center ">Featured Blockchain Projects</p>
+                        <p className="font-semibold text-xl lg:text-2xl text-center ">Featured Blockchain Projects</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {
                                 myProjects.map((featured_project, index) => (
@@ -92,7 +92,7 @@ export default async function Blockchain(){
 
                     {/* Articles/Writeups */}
                     <div className="flex flex-col gap-6 w-4/5">
-                        <p className="font-semibold text-2xl text-center ">My contributions & Resources</p>
+                        <p className="font-semibold text-xl lg:text-2xl text-center ">My contributions & Resources</p>
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {/* <FeaturedProject />
                             <FeaturedProject />
