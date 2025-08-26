@@ -15,7 +15,11 @@ import Footer from "@/components/Footer";
 const getProgrammingLanguages = async () => {
   
     try{
-      const response = await api.get('/api/programminglanguage')
+      const response = await api.get('/api/programminglanguage', {
+        headers: {
+          'Cache-Control': 'no-store'
+        }
+      })
       return response.data
     }
     catch (error) {
@@ -25,7 +29,11 @@ const getProgrammingLanguages = async () => {
 
 const getExpertise = async () => {
     try{
-      const response = await api.get('/api/expertises')
+      const response = await api.get('/api/expertises', {
+        headers: {
+          'Cache-Control': 'no-store'
+        }
+      })
       return response.data
     }
     catch (error) {
@@ -35,7 +43,11 @@ const getExpertise = async () => {
 
 const getProjects = async () => {
     try{
-      const response = await api.get('/api/projects')
+      const response = await api.get('/api/projects', {
+        headers: {
+          'Cache-Control': 'no-store'
+        }
+      })
       console.log(response.data);
       return response.data
     }
@@ -75,7 +87,7 @@ export default async function Home() {
           </div>
           
           <div className="order-1 lg:order-2 flex justify-center lg:items-center lg:w-1/2 xl:justify-end xl:pr-32">
-            <div className="relative w-2/3 h-[30vh] lg:w-[80%] lg:h-[80%] x:w-[60%]">
+            <div className="relative w-3/4 h-[30vh] md:w-2/3 lg:w-[80%] lg:h-[80%] x:w-[60%]">
               <Image className="rounded-xl" src="/personal/photo_2025-08-13_19-33-12.jpg" alt="My picture" fill />
             </div>
           </div>
