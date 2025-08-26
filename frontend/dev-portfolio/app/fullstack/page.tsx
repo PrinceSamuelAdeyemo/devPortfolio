@@ -17,12 +17,14 @@ export default function Fullstack(){
                 {/* HERO SECTION */}
                 <div className="flex justify-center py-10">
                     <div className="flex flex-col w-[95%] gap-12">
-                        <p className="text-3xl font-bold">My Fullstack Projects</p>
-                        <div className="flex gap-4">
+                        <p className="text-xl lg:text-3xl font-bold">My Fullstack Projects</p>
+                        <div className="flex flex-col gap-4 lg:flex-row">
                             <input className="outline-1 outline-gray-400 bg-white px-4 rounded-md lg:w-[63%] xl:w-[70%] h-8" type="search" name="" id="" />
-                            <button className="outline-1 outline-gray-400 bg-white px-4 rounded-md lg:w-[12%] xl:w-[10%]" type="button">Filter by tech</button>
-                            <button className="outline-1 outline-gray-400 bg-white px-4 rounded-md lg:w-[12%] xl:w-[10%]" type="button">Filter by type</button>
-                            <button className="outline-1 outline-gray-400 bg-white px-4 rounded-md lg:w-[12%] xl:w-[10%]" type="button">Sort by</button>
+                            <div className="flex gap-2 lg:w-[40%] xl:gap-4 xl:w-[30%]">
+                                <button className="outline-1 outline-gray-400 bg-white rounded-md w-full" type="button">Filter by tech</button>
+                                <button className="outline-1 outline-gray-400 bg-white rounded-md w-full" type="button">Filter by type</button>
+                                <button className="outline-1 outline-gray-400 bg-white rounded-md w-full" type="button">Sort by</button>
+                            </div>
                         </div>
                     </div>
                 </div>
