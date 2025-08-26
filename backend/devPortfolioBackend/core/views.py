@@ -31,10 +31,10 @@ class ExpertiseToolViews(APIView):
 
 class ProgrammingLanguageViews(APIView):
     def get(self, request, expertise=None):
-        if expertise == None:
-            programming_language = ProgrammingLanguage.objects.all()
-        else:
+        if expertise is not None:
             programming_language = ProgrammingLanguage.objects.filter(expertise__name__icontains=expertise)
+        else:
+            programming_language = ProgrammingLanguage.objects.all()
         serializer = ProgrammingLanguageSerializer(programming_language, many=True)
 
         return Response(serializer.data)
@@ -50,10 +50,10 @@ class ExpertiseSkillViews(APIView):
 
 class ProjectViews(APIView):
     def get(self, request, expertise=None):
-        if expertise == None:
-            projects = Project.objects.all()
-        else:
+        if expertise is not None:
             projects = Project.objects.filter(expertise__name__icontains=expertise)
+        else:
+            projects = Project.objects.all()
         serializer = ProjectSerializer(projects, many=True)
 
         return Response(serializer.data)
@@ -62,9 +62,9 @@ class ProjectViews(APIView):
 class ArticleViews(APIView):
     def get(self, request, expertise=None):
         if expertise == None:
-            article = Article.objects.all()
-        else:
             article = Article.objects.filter(expertise__name__icontains=expertise)
+        else:
+            article = Article.objects.all()
         serializer = ArticleSerializer(article, many=True)
 
         return Response(serializer.data)
