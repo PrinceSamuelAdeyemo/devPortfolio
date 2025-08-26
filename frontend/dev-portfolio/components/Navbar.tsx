@@ -25,9 +25,9 @@ export default function Navbar() {
         </ul>
       </div>
       <div onClick={() => setToggleNavbar(!toggleNavbar)} className="flex flex-col lg:hidden gap-1 z-20 ml-auto w-[2.3rem] h-6">
-        <div className={`${toggleNavbar===true ? 'rotate-45 translate-2 origin-center' : 'rotate-none' } w-full h-1 bg-gray-500 rounded`}></div>
-        <div className={`${toggleNavbar===true ? 'hidden' : 'rotate-none w-full h-1 bg-gray-500 rounded' }`}></div>
-        <div className={`${toggleNavbar===true ? '-rotate-48 translate-x-1.5 transition-all' : 'rotate-none' } w-full h-1 bg-gray-500 rounded`}></div>
+        <div className={`${toggleNavbar===true ? 'rotate-45 translate-2 origin-center duration-200' : 'rotate-none duration-200' } w-full h-1 bg-gray-500 rounded`}></div>
+        <div className={`${toggleNavbar===true ? 'hidden' : 'rotate-none w-full h-1 bg-gray-500 rounded duration-200' }`}></div>
+        <div className={`${toggleNavbar===true ? '-rotate-48 translate-x-1.5 transition-all duration-200' : 'rotate-none duration-200' } w-full h-1 bg-gray-500 rounded`}></div>
       </div>
     </nav>
   );
